@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DN PLANOS | Cotação de Plano de Saúde</title>
+
+<style>
+:root {
+  --azul: #1f2a37;
+  --dourado: #b58b4c;
+  --cinza: #6b7280;
+  --branco: #ffffff;
+}
+
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f4f6f9;
+}
+
+.banner img {
+  width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 420px;
+  background: var(--branco);
+  margin: -80px auto 30px;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  width: 120px;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+h1 {
+  text-align: center;
+  color: var(--azul);
+  margin-bottom: 5px;
+}
+
+.sub {
+  text-align: center;
+  color: var(--cinza);
+  font-size: 14px;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+button {
+  width: 100%;
+  background: var(--dourado);
+  color: white;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.benefits {
+  font-size: 13px;
+  color: var(--cinza);
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+.operadoras {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.operadoras p {
+  font-size: 13px;
+  color: var(--cinza);
+}
+
+.logos {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  width: 70px;
+}
+
+.social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.social a {
+  display: block;
+  margin: 5px 0;
+  color: var(--azul);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 18px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="banner">
+  <img src="banner.jpg">
+</div>
+
+<div class="container">
+
+<img src="logo.png" class="logo">
+
+<h1>DN PLANOS</h1>
+<p class="sub">Consultoria especializada em planos de saúde</p>
+
+<form onsubmit="enviarWhats(event)">
+
+<input type="text" id="nome" placeholder="Seu nome" required>
+
+<select id="cidade" required>
+<option value="">Selecione sua cidade</option>
+
+<optgroup label="Região Metropolitana de Curitiba">
+<option>Curitiba</option>
+<option>Adrianópolis</option>
+<option>Agudos do Sul</option>
+<option>Almirante Tamandaré</option>
+<option>Araucária</option>
+<option>Balsa Nova</option>
+<option>Bocaiúva do Sul</option>
+<option>Campina Grande do Sul</option>
+<option>Campo do Tenente</option>
+<option>Campo Largo</option>
+<option>Campo Magro</option>
+<option>Cerro Azul</option>
+<option>Colombo</option>
+<option>Contenda</option>
+<option>Doutor Ulysses</option>
+<option>Fazenda Rio Grande</option>
+<option>Itaperuçu</option>
+<option>Lapa</option>
+<option>Mandirituba</option>
+<option>Piên</option>
+<option>Pinhais</option>
+<option>Piraquara</option>
+<option>Quatro Barras</option>
+<option>Quitandinha</option>
+<option>Rio Branco do Sul</option>
+<option>Rio Negro</option>
+<option>São José dos Pinhais</option>
+<option>Tijucas do Sul</option>
+<option>Tunas do Paraná</option>
+</optgroup>
+
+<optgroup label="Outras cidades">
+<option>Londrina</option>
+<option>Maringá</option>
+<option>Ponta Grossa</option>
+<option>Joinville</option>
+<option>Balneário Camboriú</option>
+</optgroup>
+</select>
+
+<select id="estado">
+<option value="">Quer consultar condições de planos em outra região?</option>
+
+<optgroup label="Sul">
+<option>Paraná</option>
+<option>Santa Catarina</option>
+<option>Rio Grande do Sul</option>
+</optgroup>
+
+<optgroup label="Sudeste">
+<option>São Paulo</option>
+<option>Rio de Janeiro</option>
+<option>Minas Gerais</option>
+<option>Espírito Santo</option>
+</optgroup>
+
+<optgroup label="Centro-Oeste">
+<option>Distrito Federal</option>
+<option>Goiás</option>
+<option>Mato Grosso</option>
+<option>Mato Grosso do Sul</option>
+</optgroup>
+
+<optgroup label="Nordeste">
+<option>Bahia</option>
+<option>Pernambuco</option>
+<option>Ceará</option>
+<option>Paraíba</option>
+<option>Rio Grande do Norte</option>
+<option>Alagoas</option>
+<option>Sergipe</option>
+<option>Piauí</option>
+<option>Maranhão</option>
+</optgroup>
+
+<optgroup label="Norte">
+<option>Amazonas</option>
+<option>Pará</option>
+<option>Acre</option>
+<option>Rondônia</option>
+<option>Roraima</option>
+<option>Amapá</option>
+<option>Tocantins</option>
+</optgroup>
+</select>
+
+<select id="plano" required>
+<option value="">Tipo de plano</option>
+<option>Individual</option>
+<option>Familiar</option>
+<option>Empresarial</option>
+</select>
+
+<select id="cnpj" required>
+<option value="">Possui CNPJ?</option>
+<option>Sim, ativo há mais de 6 meses</option>
+<option>Não possuo CNPJ</option>
+</select>
+
+<input type="number" id="vidas" placeholder="Quantidade de pessoas" required>
+
+<input type="text" id="idades" placeholder="Idades (ex: 30, 28, 5)" required>
+
+<select id="perfil" required>
+<option value="">Perfil de plano</option>
+<option>Plano mais econômico (foco em custo-benefício)</option>
+<option>Equilíbrio entre valor e cobertura</option>
+<option>Plano completo (maior cobertura e rede credenciada)</option>
+</select>
+
+<button type="submit">📲 Receber cotação no WhatsApp</button>
+
+</form>
+
+<div class="benefits">
+✔ Consultoria personalizada para seu perfil<br>
+✔ Especialista há 13 nos em planos de saúde<br>
+✔ Condições exclusivas e melhor custo-benefício
+</div>
+
+<div class="operadoras">
+<p>Trabalhamos com as principais operadoras:</p>
+<div class="logos">
+<img src="operars.png">
+</div>
+</div>
+
+<div class="social">
+<a href="https://www.instagram.com/dnplanos/" target="_blank">Instagram</a>
+<a href="https://share.google/QsXU4NCW0re8shS9v" target="_blank">Avaliações no Google</a>
+</div>
+
+</div>
+
+<a class="whatsapp" href="https://wa.me/554188662889" target="_blank">💬</a>
+
+<script>
+function enviarWhats(event){
+event.preventDefault();
+
+var nome = document.getElementById('nome').value;
+var cidade = document.getElementById('cidade').value;
+var estado = document.getElementById('estado').value;
+var plano = document.getElementById('plano').value;
+var cnpj = document.getElementById('cnpj').value;
+var vidas = document.getElementById('vidas').value;
+var idades = document.getElementById('idades').value;
+var perfil = document.getElementById('perfil').value;
+
+var mensagem = "Olá, vim pelo site da DN PLANOS:%0A%0A"
++ "Nome: " + nome + "%0A"
++ "Cidade: " + cidade + "%0A";
+
+if(estado){
+mensagem += "Estado de interesse: " + estado + "%0A";
+}
+
+mensagem += "Plano: " + plano + "%0A"
++ "CNPJ: " + cnpj + "%0A"
++ "Vidas: " + vidas + "%0A"
++ "Idades: " + idades + "%0A"
++ "Perfil: " + perfil;
+
+window.open("https://wa.me/554188662889?text=" + mensagem, '_blank');
+}
+</script>
+
+</body>
+</html>
