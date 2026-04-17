@@ -146,12 +146,57 @@ input, select {
   border-radius:50%;
   text-decoration:none;
 }
+
+/* FAQ PREMIUM */
+.faq-title {
+  text-align:center;
+  margin-top:30px;
+  color:var(--azul);
+}
+
+.faq-item {
+  background:white;
+  border-radius:12px;
+  margin-bottom:10px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+
+.faq-question {
+  padding:14px;
+  font-weight:bold;
+  cursor:pointer;
+  position:relative;
+}
+
+.faq-question::after {
+  content:"+";
+  position:absolute;
+  right:15px;
+}
+
+.faq-item.active .faq-question::after {
+  content:"−";
+}
+
+.faq-answer {
+  max-height:0;
+  overflow:hidden;
+  padding:0 14px;
+  font-size:14px;
+  color:#444;
+  transition:0.3s;
+}
+
+.faq-item.active .faq-answer {
+  max-height:300px;
+  padding:10px 14px;
+}
 </style>
 </head>
 
 <body>
 
-<!-- BANNER -->
 <div class="banner"></div>
 
 <div class="container">
@@ -162,12 +207,10 @@ input, select {
 <p class="sub">Consultoria especializada em planos de saúde</p>
 
 <form onsubmit="enviarWhats(event)">
-
 <input type="text" id="nome" placeholder="Seu nome" required>
 
 <select id="cidade" required>
 <option value="">Selecione sua cidade</option>
-
 <optgroup label="Região Metropolitana de Curitiba">
 <option>Curitiba</option>
 <option>Adrianópolis</option>
@@ -185,12 +228,10 @@ input, select {
 <option>Quatro Barras</option>
 <option>São José dos Pinhais</option>
 </optgroup>
-
 </select>
 
 <select id="estado">
 <option value="">Consultar planos em outra região?</option>
-
 <option>Acre</option>
 <option>Alagoas</option>
 <option>Amapá</option>
@@ -218,7 +259,6 @@ input, select {
 <option>São Paulo</option>
 <option>Sergipe</option>
 <option>Tocantins</option>
-
 </select>
 
 <select id="plano" required>
@@ -228,7 +268,7 @@ input, select {
 <option>Empresarial</option>
 </select>
 
-  <select id="cnpj" required>
+<select id="cnpj" required>
 <option value="">Possui CNPJ?</option>
 <option>Sim, ativo há mais de 6 meses</option>
 <option>Não possuo CNPJ</option>
@@ -238,14 +278,13 @@ input, select {
 
 <input type="text" id="idades" placeholder="Idades (ex: 30, 28, 5)" required>
 
-  <select id="perfil" required>
+<select id="perfil" required>
 <option value="">Perfil de Plano</option>
 <option>Plano mais econômico (foco em custo-benefício)</option>
 <option>Plano completo (maior cobertura e rede credenciada)</option>
 </select>
 
 <button class="btn">📲 Receber Cotação no WhatsApp</button>
-
 </form>
 
 <div class="benefits">
@@ -257,16 +296,47 @@ input, select {
 <h3 style="text-align:center;">Operadoras parceiras</h3>
 
 <div class="grid-operadoras">
-<img src="1.jpg">
-<img src="2.jpg">
-<img src="3.jpg">
-<img src="4.jpg">
-<img src="5.jpg">
-<img src="6.jpg">
-<img src="7.jpg">
-<img src="8.jpg">
-<img src="9.jpg">
-<img src="10.jpg">
+<img src="1.jpg"><img src="2.jpg"><img src="3.jpg"><img src="4.jpg">
+<img src="5.jpg"><img src="6.jpg"><img src="7.jpg"><img src="8.jpg">
+<img src="9.jpg"><img src="10.jpg">
+</div>
+
+<!-- FAQ PROFISSIONAL -->
+<h3 class="faq-title">Dúvidas Frequentes</h3>
+
+<div class="faq">
+
+<div class="faq-item">
+<div class="faq-question">Quanto custa o plano?</div>
+<div class="faq-answer">
+O custo do plano é personalizado e varia de acordo com a idade, localização e tipo de cobertura. Mas não se preocupe, temos opções para todos os orçamentos e necessidades! Posso fornecer um orçamento personalizado para você e mostrar como pode ser uma excelente opção de investimento para a sua saúde e bem-estar. 😊
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Quais hospitais e clínicas atende?</div>
+<div class="faq-answer">
+Isso depende do plano escolhido!
+Temos opções que atendem nos principais hospitais, clínicas e laborátorios da cidade, com praticidade e fácil acesso. 🏥
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Quem possui CNPJ ou MEI tem valores e condições mais vantajosas?</div>
+<div class="faq-answer">
+Na maioria dos casos, sim 😊
+Se o CNPJ estiver ativo há pelo menos 6 meses, já é possível ter acesso a condições diferenciadas. Entre em contato que cotamos um plano empresarial ideal para o seu perfil!
+</div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">Estou grávida e não tenho plano de saúde. Ainda dá tempo de contratar?</div>
+<div class="faq-answer">
+É possível contratar o plano mesmo já estando gestante.🤰🏻
+Mas muitas operadoras tem carência para parto. Por isso, quanto antes contratar, melhor para organizar sua gestação com mais segurança e previsibilidade. Se você já está gestante ou pretende engravidar entre em contato que esclareço todas as suas dúvidas!
+</div>
+</div>
+
 </div>
 
 <a href="https://www.instagram.com/dnplanos/" class="social-btn insta" target="_blank">
@@ -310,6 +380,13 @@ msg += "Plano: " + plano + "%0A"
 
 window.open("https://wa.me/554188662889?text=" + msg, '_blank');
 }
+
+/* FAQ INTERAÇÃO */
+document.querySelectorAll(".faq-item").forEach(item=>{
+item.addEventListener("click",()=>{
+item.classList.toggle("active");
+});
+});
 </script>
 
 </body>
