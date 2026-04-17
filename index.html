@@ -1,141 +1,158 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DN PLANOS | Cotação de Plano de Saúde</title>
 
 <style>
 :root {
-  --azul: #1f2a37;
-  --dourado: #b58b4c;
-  --cinza: #6b7280;
-  --branco: #ffffff;
+  --azul:#1f2a37;
+  --dourado:#b58b4c;
+  --cinza:#6b7280;
 }
 
+/* FUNDO PROFISSIONAL */
 body {
-  font-family: Arial;
-  margin: 0;
-  background: #f4f6f9;
+  margin:0;
+  font-family:Arial;
+  background:url('fundo.jpg') no-repeat center center fixed;
+  background-size:cover;
 }
 
-.banner img {
-  width: 100%;
-  display: block;
+body::before {
+  content:"";
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.5);
 }
 
+/* BANNER TOPO */
+.banner {
+  width:100%;
+  height:250px;
+  background:url('banner.jpg') no-repeat center;
+  background-size:cover;
+}
+
+/* CONTAINER */
 .container {
-  max-width: 420px;
-  background: var(--branco);
-  margin: -80px auto 30px;
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0px 15px 30px rgba(0,0,0,0.2);
-  position: relative;
-  z-index: 2;
+  width:90%;
+  max-width:420px;
+  background:rgba(255,255,255,0.97);
+  margin:-80px auto 40px;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0px 20px 40px rgba(0,0,0,0.4);
+  position:relative;
+  z-index:1;
 }
 
+/* LOGO */
 .logo {
-  width: 120px;
-  display: block;
-  margin: 0 auto 10px;
+  width:120px;
+  display:block;
+  margin:0 auto 10px;
 }
 
+/* TITULOS */
 h1 {
-  text-align: center;
-  color: var(--azul);
-  margin-bottom: 5px;
+  text-align:center;
+  color:var(--azul);
 }
 
 .sub {
-  text-align: center;
-  color: var(--cinza);
-  font-size: 14px;
+  text-align:center;
+  color:var(--cinza);
+  font-size:14px;
 }
 
+/* FORM */
 input, select {
-  width: 100%;
-  padding: 12px;
-  margin: 8px 0;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:8px;
+  border:1px solid #ddd;
 }
 
-button {
-  width: 100%;
-  background: var(--dourado);
-  color: white;
-  border: none;
-  padding: 14px;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 15px;
-  cursor: pointer;
+/* BOTÃO PISCANDO */
+@keyframes pulse {
+  0% {transform:scale(1);}
+  70% {transform:scale(1.05);}
+  100% {transform:scale(1);}
 }
 
-button:hover {
-  opacity: 0.9;
+.btn {
+  width:100%;
+  background:linear-gradient(45deg,#b58b4c,#d4af37);
+  color:white;
+  border:none;
+  padding:16px;
+  border-radius:10px;
+  font-weight:bold;
+  font-size:16px;
+  cursor:pointer;
+  animation:pulse 1.6s infinite;
 }
 
-.benefits {
-  font-size: 13px;
-  color: var(--cinza);
-  margin-top: 10px;
-  line-height: 1.6;
+/* BENEFICIOS */
+.benefits p {
+  background:#f9fafb;
+  padding:10px;
+  border-radius:8px;
+  margin-bottom:10px;
 }
 
-.operadoras {
-  text-align: center;
-  margin-top: 20px;
+/* OPERADORAS */
+.grid-operadoras {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
 
-.operadoras p {
-  font-size: 13px;
-  color: var(--cinza);
+.grid-operadoras img {
+  width:100%;
+  border-radius:8px;
+  background:#fff;
+  padding:5px;
 }
 
-.logos {
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-  flex-wrap: wrap;
+/* SOCIAL */
+.social-btn {
+  display:block;
+  text-align:center;
+  padding:12px;
+  border-radius:10px;
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+  margin-top:10px;
 }
 
-.logos img {
-  width: 70px;
-}
+.insta {background:linear-gradient(45deg,#833AB4,#E1306C,#F77737);}
+.google {background:#4285F4;}
 
-.social {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.social a {
-  display: block;
-  margin: 5px 0;
-  color: var(--azul);
-  text-decoration: none;
-  font-weight: bold;
-}
-
+/* WHATSAPP */
 .whatsapp {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #25D366;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  text-decoration: none;
-  font-size: 18px;
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:15px;
+  border-radius:50%;
+  text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<div class="banner">
-  <img src="banner.png">
-</div>
+<!-- BANNER -->
+<div class="banner"></div>
 
 <div class="container">
 
@@ -158,84 +175,50 @@ button:hover {
 <option>Almirante Tamandaré</option>
 <option>Araucária</option>
 <option>Balsa Nova</option>
-<option>Bocaiúva do Sul</option>
 <option>Campina Grande do Sul</option>
-<option>Campo do Tenente</option>
 <option>Campo Largo</option>
 <option>Campo Magro</option>
-<option>Cerro Azul</option>
 <option>Colombo</option>
-<option>Contenda</option>
-<option>Doutor Ulysses</option>
 <option>Fazenda Rio Grande</option>
-<option>Itaperuçu</option>
-<option>Lapa</option>
-<option>Mandirituba</option>
-<option>Piên</option>
 <option>Pinhais</option>
 <option>Piraquara</option>
 <option>Quatro Barras</option>
-<option>Quitandinha</option>
-<option>Rio Branco do Sul</option>
-<option>Rio Negro</option>
 <option>São José dos Pinhais</option>
-<option>Tijucas do Sul</option>
-<option>Tunas do Paraná</option>
 </optgroup>
 
-<optgroup label="Outras cidades">
-<option>Londrina</option>
-<option>Maringá</option>
-<option>Ponta Grossa</option>
-<option>Joinville</option>
-<option>Balneário Camboriú</option>
-</optgroup>
 </select>
 
 <select id="estado">
-<option value="">Quer consultar condições de planos em outra região?</option>
+<option value="">Consultar planos em outra região?</option>
 
-<optgroup label="Sul">
-<option>Paraná</option>
-<option>Santa Catarina</option>
-<option>Rio Grande do Sul</option>
-</optgroup>
-
-<optgroup label="Sudeste">
-<option>São Paulo</option>
-<option>Rio de Janeiro</option>
-<option>Minas Gerais</option>
-<option>Espírito Santo</option>
-</optgroup>
-
-<optgroup label="Centro-Oeste">
+<option>Acre</option>
+<option>Alagoas</option>
+<option>Amapá</option>
+<option>Amazonas</option>
+<option>Bahia</option>
+<option>Ceará</option>
 <option>Distrito Federal</option>
+<option>Espírito Santo</option>
 <option>Goiás</option>
+<option>Maranhão</option>
 <option>Mato Grosso</option>
 <option>Mato Grosso do Sul</option>
-</optgroup>
-
-<optgroup label="Nordeste">
-<option>Bahia</option>
-<option>Pernambuco</option>
-<option>Ceará</option>
-<option>Paraíba</option>
-<option>Rio Grande do Norte</option>
-<option>Alagoas</option>
-<option>Sergipe</option>
-<option>Piauí</option>
-<option>Maranhão</option>
-</optgroup>
-
-<optgroup label="Norte">
-<option>Amazonas</option>
+<option>Minas Gerais</option>
 <option>Pará</option>
-<option>Acre</option>
+<option>Paraíba</option>
+<option>Paraná</option>
+<option>Pernambuco</option>
+<option>Piauí</option>
+<option>Rio de Janeiro</option>
+<option>Rio Grande do Norte</option>
+<option>Rio Grande do Sul</option>
 <option>Rondônia</option>
 <option>Roraima</option>
-<option>Amapá</option>
+<option>Santa Catarina</option>
+<option>São Paulo</option>
+<option>Sergipe</option>
 <option>Tocantins</option>
-</optgroup>
+
 </select>
 
 <select id="plano" required>
@@ -245,43 +228,54 @@ button:hover {
 <option>Empresarial</option>
 </select>
 
-<select id="cnpj" required>
+  <select id="cnpj" required>
 <option value="">Possui CNPJ?</option>
 <option>Sim, ativo há mais de 6 meses</option>
 <option>Não possuo CNPJ</option>
 </select>
 
-<input type="number" id="vidas" placeholder="Quantidade de pessoas" required>
+<input type="number" id="vidas" min="1" max="50" placeholder="Quantidade de pessoas" required>
 
 <input type="text" id="idades" placeholder="Idades (ex: 30, 28, 5)" required>
 
-<select id="perfil" required>
-<option value="">Perfil de plano</option>
+  <select id="perfil" required>
+<option value="">Perfil de Plano</option>
 <option>Plano mais econômico (foco em custo-benefício)</option>
 <option>Plano completo (maior cobertura e rede credenciada)</option>
 </select>
 
-<button type="submit">📲 Receber cotação no WhatsApp</button>
+<button class="btn">📲 Receber Cotação no WhatsApp</button>
 
 </form>
 
 <div class="benefits">
-✔ Consultoria personalizada para seu perfil<br>
-✔ Especialista há 13 anos em planos de saúde<br>
-✔ Condições exclusivas e melhor custo-benefício<br>
+<p>✔ Consultoria personalizada para seu perfil🎯</p>
+<p>✔ Especialista há 13 anos em planos de saúde⭐</p>
+<p>✔ Condições exclusivas e melhor custo-benefício💰</p>
 </div>
 
-<div class="operadoras">
-<p>Trabalhamos com as principais operadoras:</p>
-<div class="logos">
-<img src="operadoras.png">
-</div>
+<h3 style="text-align:center;">Operadoras parceiras</h3>
+
+<div class="grid-operadoras">
+<img src="1.jpg">
+<img src="2.jpg">
+<img src="3.jpg">
+<img src="4.jpg">
+<img src="5.jpg">
+<img src="6.jpg">
+<img src="7.jpg">
+<img src="8.jpg">
+<img src="9.jpg">
+<img src="10.jpg">
 </div>
 
-<div class="social">
-<a href="https://www.instagram.com/dnplanos/" target="_blank">Instagram</a>
-<a href="https://share.google/QsXU4NCW0re8shS9v" target="_blank">Avaliações no Google</a>
-</div>
+<a href="https://www.instagram.com/dnplanos/" class="social-btn insta" target="_blank">
+📸 Instagram
+</a>
+
+<a href="https://share.google/QsXU4NCW0re8shS9v" class="social-btn google" target="_blank">
+⭐ Avaliações no Google
+</a>
 
 </div>
 
@@ -295,26 +289,26 @@ var nome = document.getElementById('nome').value;
 var cidade = document.getElementById('cidade').value;
 var estado = document.getElementById('estado').value;
 var plano = document.getElementById('plano').value;
+var perfil = document.getElementById('perfil').value;
 var cnpj = document.getElementById('cnpj').value;
 var vidas = document.getElementById('vidas').value;
 var idades = document.getElementById('idades').value;
-var perfil = document.getElementById('perfil').value;
 
-var mensagem = "Olá, vim pelo site da DN PLANOS:%0A%0A"
+var msg = "Olá, vim pelo site:%0A%0A"
 + "Nome: " + nome + "%0A"
 + "Cidade: " + cidade + "%0A";
 
 if(estado){
-mensagem += "Estado de interesse: " + estado + "%0A";
+msg += "Estado: " + estado + "%0A";
 }
 
-mensagem += "Plano: " + plano + "%0A"
+msg += "Plano: " + plano + "%0A"
++ "Perfil: " + perfil + "%0A"
 + "CNPJ: " + cnpj + "%0A"
 + "Vidas: " + vidas + "%0A"
-+ "Idades: " + idades + "%0A"
-+ "Perfil: " + perfil;
++ "Idades: " + idades;
 
-window.open("https://wa.me/554188662889?text=" + mensagem, '_blank');
+window.open("https://wa.me/554188662889?text=" + msg, '_blank');
 }
 </script>
 
