@@ -1,3 +1,5 @@
+implemente essa ideia nesse codigo original sem alterar a estrutura ja definifa
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -192,6 +194,41 @@ input, select {
   max-height:300px;
   padding:10px 14px;
 }
+
+  /* CARROSSEL */
+.avaliacoes-carrossel {
+  overflow:hidden;
+  position:relative;
+  margin-top:20px;
+}
+
+.carrossel-track {
+  display:flex;
+  gap:15px;
+  animation:scroll 20s linear infinite;
+}
+
+/* CARDS */
+.card-avaliacao {
+  min-width:250px;
+  max-width:250px;
+  background:white;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+  flex-shrink:0;
+}
+
+/* ANIMAÇÃO */
+@keyframes scroll {
+  0% {transform:translateX(0);}
+  100% {transform:translateX(-50%);}
+}
+
+/* PAUSA AO PASSAR O MOUSE */
+.avaliacoes-carrossel:hover .carrossel-track {
+  animation-play-state:paused;
+}
 </style>
 </head>
 
@@ -203,8 +240,8 @@ input, select {
 
 <img src="logo.png" class="logo">
 
-<h1>INVISTA NAQUILO QUE SUSTENTA TODOS OS SEUS PLANOS: A SUA SAÚDE!</h1>
-<p class="sub">Daniele Nascimento | Especialista em Planos de Saúde</p>
+<h1>INVISTA NAQUILO QUE SUSTENTA TODOS OS SEUS PLANOS: SUA SAÚDE!</h1> 
+<p class="sub">Daniele | Especialista em Planos de Saúde</p> 
 
 <form onsubmit="enviarWhats(event)">
 <input type="text" id="nome" placeholder="Seu nome" required>
@@ -288,55 +325,67 @@ input, select {
 </form>
 
 <div class="benefits">
-<p>🎯Consultoria personalizada</p>
-<p>⭐Especialista há 13 anos</p>
-<p>💰Condições com melhor custo-benefício</p>
+<p>🎯 CONSULTORIA ESPECIALIZADA</p> 
+<p>⭐ ESPECIALISTA HÁ MAIS DE 13 ANOS</p> 
+<p>💰 CONDIÇÕES COM O MELHOR CUSTO-BENEFÍCIO</p> 
 </div>
 
-<h3 style="text-align:center;">TRABALHO COM OPERADORAS CONSOLIDADAS:</h3>
+<h3 style="text-align:center;">Por isso trabalho com operadoras consolidadas:</h3>
 
 <div class="grid-operadoras">
 <img src="1.png"><img src="2.png"><img src="3.png"><img src="4.png">
 <img src="5.png"><img src="6.png"><img src="7.png"><img src="8.png">
 </div>
   
-<!-- AVALIAÇÕES GOOGLE -->
-<h2 class="avaliacoes-titulo">⭐ Avaliações dos Clientes</h2>
-  
-  <a href="https://share.google/QsXU4NCW0re8shS9v" target="_blank" class="btn-google">
-    Ver todas as avaliações no Google
-  </a>
+<div class="avaliacoes-carrossel">
+
+  <div class="carrossel-track">
+
+    <div class="card-avaliacao">
+      <div class="topo-avaliacao">
+        <span class="cliente">Gisele Mila</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+      </div>
+      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
+    </div>
+
+    <div class="card-avaliacao">
+      <div class="topo-avaliacao">
+        <span class="cliente">Luciana Borges</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+      </div>
+      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
+    </div>
+
+    <div class="card-avaliacao">
+      <div class="topo-avaliacao">
+        <span class="cliente">Gabriela Soares</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+      </div>
+      <p class="texto">Dani é uma excelente consultora de planos de saúde: atenciosa, clara nas explicações e sempre disposta a encontrar a melhor opção de acordo com a necessidade do cliente. Profissional dedicada e de total confiança.</p>
+    </div>
+
+    <!-- DUPLICAÇÃO PARA LOOP INFINITO -->
+    <div class="card-avaliacao">
+      <div class="topo-avaliacao">
+        <span class="cliente">Gisele Mila</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+      </div>
+      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
+    </div>
+
+    <div class="card-avaliacao">
+      <div class="topo-avaliacao">
+        <span class="cliente">Luciana Borges</span>
+        <span class="stars">⭐⭐⭐⭐⭐</span>
+      </div>
+      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
+    </div>
+
+  </div>
+
 </div>
-
-<div class="avaliacoes-grid">
-
-  <div class="card-avaliacao">
-    <p class="stars">⭐⭐⭐⭐⭐</p>
-    <p class="texto">
-      Sanou todas as minhas dúvidas referente a contratação e utilização do mesmo.
-      É aquela profissional que indicamos para parentes e amigos!
-    </p>
-    <span class="cliente">— Tamires</span>
-  </div>
-
-  <div class="card-avaliacao">
-    <p class="stars">⭐⭐⭐⭐⭐</p>
-    <p class="texto">
-      A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!
-    </p>
-    <span class="cliente">— Gisele</span>
-  </div>
-
-  <div class="card-avaliacao">
-    <p class="stars">⭐⭐⭐⭐⭐</p>
-    <p class="texto">
-      Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!
-    </p>
-    <span class="cliente">— Luciana</span>
-  </div>
-
-</div>
-  
+ 
 <!-- FAQ PROFISSIONAL -->
 <h3 class="faq-title">Dúvidas Frequentes</h3>
 
@@ -352,7 +401,7 @@ O custo do plano é personalizado e varia de acordo com a idade, localização e
 <div class="faq-item">
 <div class="faq-question">O que é carência?</div>
 <div class="faq-answer">
-O prazo de carência é o tempo que você precisa esperar antes de poder utilizar alguns serviços do plano. Com a minha consultoria você contrata planos com carência reduzida ou até sem carências!
+O prazo de carência é o tempo que você precisa esperar antes de poder utilizar alguns serviços do plano. Com a  minha consultoria você contrata planos com carência reduzida ou até sem carências! 
 </div>
 </div>
 
@@ -421,52 +470,7 @@ msg += "Plano: " + plano + "%0A"
 + "Vidas: " + vidas + "%0A"
 + "Idades: " + idades;
 
-/* WHATSAPP DESTACADO */
-.whatsapp-box {
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  z-index:999;
-}
-
-/* MENSAGEM */
-.whatsapp-msg {
-  background:#fff;
-  color:#333;
-  font-size:13px;
-  padding:8px 12px;
-  border-radius:20px;
-  margin-bottom:6px;
-  box-shadow:0 5px 15px rgba(0,0,0,0.2);
-  animation:fadeIn 1s ease;
-}
-
-/* BOTÃO */
-.whatsapp {
-  background:#25D366;
-  color:white;
-  padding:18px;
-  border-radius:50%;
-  text-decoration:none;
-  font-size:22px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.3);
-  animation:pulseWhats 1.5s infinite;
-}
-
-/* ANIMAÇÕES */
-@keyframes pulseWhats {
-  0% {transform:scale(1);}
-  70% {transform:scale(1.1);}
-  100% {transform:scale(1);}
-}
-
-@keyframes fadeIn {
-  from {opacity:0; transform:translateY(10px);}
-  to {opacity:1; transform:translateY(0);}
-}
+window.open("https://wa.me/554188662889?text=" + msg, '_blank');
 }
 
 /* FAQ INTERAÇÃO */
