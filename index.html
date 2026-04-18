@@ -1,5 +1,3 @@
-implemente essa ideia nesse codigo original sem alterar a estrutura ja definifa
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -195,28 +193,37 @@ input, select {
   padding:10px 14px;
 }
 
-  /* CARROSSEL */
-.avaliacoes-carrossel {
-  overflow:hidden;
-  position:relative;
-  margin-top:20px;
+.avaliacoes {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 0 20px;
 }
 
-.carrossel-track {
-  display:flex;
-  gap:15px;
-  animation:scroll 05s linear infinite;
+.avaliacoes h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--azul);
 }
 
-/* CARDS */
-.card-avaliacao {
-  min-width:250px;
-  max-width:250px;
-  background:white;
-  border-radius:12px;
-  padding:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  flex-shrink:0;
+.avaliacao-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.avaliacao-card .texto {
+  font-size: 15px;
+  color: #374151;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.avaliacao-card .nome {
+  font-weight: bold;
+  color: var(--dourado);
 }
 </style>
 </head>
@@ -326,54 +333,39 @@ input, select {
 <img src="5.png"><img src="6.png"><img src="7.png"><img src="8.png">
 </div>
   
-<div class="avaliacoes-carrossel">
+<section class="avaliacoes">
 
-  <div class="carrossel-track">
-
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gisele Mila</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
+  <div class="card-avaliacao">
+    <div class="topo-avaliacao">
+      <span class="cliente">Gisele Mila</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
     </div>
-
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Luciana Borges</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
-    </div>
-
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gabriela Soares</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Dani é uma excelente consultora de planos de saúde: atenciosa, clara nas explicações e sempre disposta a encontrar a melhor opção de acordo com a necessidade do cliente. Profissional dedicada e de total confiança.</p>
-    </div>
-
-    <!-- DUPLICAÇÃO PARA LOOP INFINITO -->
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gisele Mila</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
-    </div>
-
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Luciana Borges</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
-    </div>
-
+    <p class="texto">
+      A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!
+    </p>
   </div>
 
-</div>
+  <div class="card-avaliacao">
+    <div class="topo-avaliacao">
+      <span class="cliente">Luciana Borges</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+    </div>
+    <p class="texto">
+      Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!
+    </p>
+  </div>
+
+  <div class="card-avaliacao">
+    <div class="topo-avaliacao">
+      <span class="cliente">Gabriela Soares</span>
+      <span class="stars">⭐⭐⭐⭐⭐</span>
+    </div>
+    <p class="texto">
+      Dani é uma excelente consultora de planos de saúde: atenciosa, clara nas explicações e sempre disposta a encontrar a melhor opção de acordo com a necessidade do cliente. Profissional dedicada e de total confiança.
+    </p>
+  </div>
+
+</section>
  
 <!-- FAQ PROFISSIONAL -->
 <h3 class="faq-title">Dúvidas Frequentes</h3>
