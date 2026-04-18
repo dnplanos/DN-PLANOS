@@ -300,10 +300,45 @@ input, select {
 <img src="5.png"><img src="6.png"><img src="7.png"><img src="8.png">
 </div>
   
-<h3 style="text-align:center;">⭐DEPOIMENTOS⭐</h3>
+<!-- AVALIAÇÕES GOOGLE -->
+<h2 class="avaliacoes-titulo">⭐ Avaliações dos Clientes</h2>
 
-<div class="grid-depoimentos">
-<img src="dep1.png"><img src="dep2.png"><img src="dep3.png">
+<div class="avaliacoes-resumo">
+  <p class="nota">5.0 ⭐⭐⭐⭐⭐</p>
+  <p>Baseado em avaliações reais no Google</p>
+  
+  <a href="https://share.google/QsXU4NCW0re8shS9v" target="_blank" class="btn-google">
+    Ver avaliações no Google
+  </a>
+</div>
+
+<div class="avaliacoes-grid">
+
+  <div class="card-avaliacao">
+    <p class="stars">⭐⭐⭐⭐⭐</p>
+    <p class="texto">
+      Sanou todas as minhas dúvidas referente a contratação e utilização do mesmo.
+      É aquela profissional que indicamos para parentes e amigos!
+    </p>
+    <span class="cliente">— Tamires</span>
+  </div>
+
+  <div class="card-avaliacao">
+    <p class="stars">⭐⭐⭐⭐⭐</p>
+    <p class="texto">
+      A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!
+    </p>
+    <span class="cliente">— Gisele</span>
+  </div>
+
+  <div class="card-avaliacao">
+    <p class="stars">⭐⭐⭐⭐⭐</p>
+    <p class="texto">
+      Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!
+    </p>
+    <span class="cliente">— Luciana</span>
+  </div>
+
 </div>
   
 <!-- FAQ PROFISSIONAL -->
@@ -321,7 +356,7 @@ O custo do plano é personalizado e varia de acordo com a idade, localização e
 <div class="faq-item">
 <div class="faq-question">O que é carência?</div>
 <div class="faq-answer">
-O prazo de carência é o tempo quevocê precisa esperarar antes de poder utilizar alguns serviços do plano.Com a  minha consultoria você contrata planos com carência reduzida ou até sem carências!
+O prazo de carência é o tempo que você precisa esperar antes de poder utilizar alguns serviços do plano. Com a minha consultoria você contrata planos com carência reduzida ou até sem carências!
 </div>
 </div>
 
@@ -390,7 +425,52 @@ msg += "Plano: " + plano + "%0A"
 + "Vidas: " + vidas + "%0A"
 + "Idades: " + idades;
 
-window.open("https://wa.me/554188662889?text=" + msg, '_blank');
+/* WHATSAPP DESTACADO */
+.whatsapp-box {
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  z-index:999;
+}
+
+/* MENSAGEM */
+.whatsapp-msg {
+  background:#fff;
+  color:#333;
+  font-size:13px;
+  padding:8px 12px;
+  border-radius:20px;
+  margin-bottom:6px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  animation:fadeIn 1s ease;
+}
+
+/* BOTÃO */
+.whatsapp {
+  background:#25D366;
+  color:white;
+  padding:18px;
+  border-radius:50%;
+  text-decoration:none;
+  font-size:22px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+  animation:pulseWhats 1.5s infinite;
+}
+
+/* ANIMAÇÕES */
+@keyframes pulseWhats {
+  0% {transform:scale(1);}
+  70% {transform:scale(1.1);}
+  100% {transform:scale(1);}
+}
+
+@keyframes fadeIn {
+  from {opacity:0; transform:translateY(10px);}
+  to {opacity:1; transform:translateY(0);}
+}
 }
 
 /* FAQ INTERAÇÃO */
