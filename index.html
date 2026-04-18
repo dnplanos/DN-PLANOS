@@ -193,42 +193,74 @@ input, select {
   padding:10px 14px;
 }
 
-  /* CARROSSEL */
-.avaliacoes-carrossel {
-  overflow:hidden;
-  position:relative;
-  margin-top:20px;
+ .avaliacoes {
+  padding: 40px 20px;
+  text-align: center;
+  background: #f7f7f7;
 }
 
-.carrossel-track {
-  display:flex;
-  gap:15px;
-  animation:scroll 20s linear infinite;
+.avaliacoes h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #1f2a37;
 }
 
-/* CARDS */
-.card-avaliacao {
-  min-width:250px;
-  max-width:250px;
-  background:white;
-  border-radius:12px;
-  padding:15px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.1);
-  flex-shrink:0;
+.carrossel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px;
 }
 
-/* ANIMAÇÃO */
-@keyframes scroll {
-  0% {transform:translateX(0);}
-  100% {transform:translateX(-50%);}
+.carrossel::-webkit-scrollbar {
+  display: none;
 }
-@media (max-width:600px) {
-  .card-avaliacao {
-    min-width:200px;
+
+.card {
+  min-width: 280px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  scroll-snap-align: start;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  flex-shrink: 0;
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card p {
+  margin: 10px 0;
+  color: #333;
+}
+
+.card span {
+  font-size: 14px;
+  color: #777;
 }
 </style>
 </head>
 
+  <script>
+const carrossel = document.getElementById("carrossel");
+
+// Auto deslizar
+setInterval(() => {
+  carrossel.scrollBy({
+    left: 300,
+    behavior: "smooth"
+  });
+
+  // volta pro início quando chegar no fim
+  if (carrossel.scrollLeft + carrossel.offsetWidth >= carrossel.scrollWidth) {
+    carrossel.scrollTo({ left: 0, behavior: "smooth" });
+  }
+}, 3500);
+</script>
 <body>
 
 <div class="banner"></div>
@@ -339,54 +371,35 @@ input, select {
 <img src="1.png"><img src="2.png"><img src="3.png"><img src="4.png">
 <img src="5.png"><img src="6.png"><img src="7.png"><img src="8.png">
 </div>
-  
-<div class="avaliacoes-carrossel">
 
-  <div class="carrossel-track">
+  <section id="avaliacoes" class="avaliacoes">
 
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gisele Mila</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
+  <h2>Avaliações dos Clientes</h2>
+
+  <div class="carrossel" id="carrossel">
+
+    <div class="card">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!"</p>
+      <span>- Gisele Mila</span>
     </div>
 
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Luciana Borges</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
+    <div class="card">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!"</p>
+      <span>- Luciana Borges</span>
     </div>
 
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gabriela Soares</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Dani é uma excelente consultora de planos de saúde: atenciosa, clara nas explicações e sempre disposta a encontrar a melhor opção de acordo com a necessidade do cliente. Profissional dedicada e de total confiança.</p>
-    </div>
-
-    <!-- DUPLICAÇÃO PARA LOOP INFINITO -->
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Gisele Mila</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">A Dani sempre muito disposta a ajudar e ágil no atendimento, realizei adesão e me auxiliou na portabilidade do meu plano. Atendimento excepcional!</p>
-    </div>
-
-    <div class="card-avaliacao">
-      <div class="topo-avaliacao">
-        <span class="cliente">Luciana Borges</span>
-        <span class="stars">⭐⭐⭐⭐⭐</span>
-      </div>
-      <p class="texto">Me senti muito segura com as suas orientações e pela forma transparente como você conduz o trabalho. Parabéns pelo excelente atendimento!</p>
+    <div class="card">
+      <p>⭐⭐⭐⭐⭐</p>
+      <p>"Dani é uma excelente consultora de planos de saúde: atenciosa, clara nas explicações e sempre disposta a encontrar a melhor opção de acordo com a necessidade do cliente. Profissional dedicada e de total confiança!"</p>
+      <span>- Gabriela Soares</span>
     </div>
 
   </div>
 
+</section>
+  
 </div>
  
 <!-- FAQ PROFISSIONAL -->
