@@ -197,33 +197,34 @@ input, select {
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
-.avaliacoes h2 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: var(--azul);
-}
-
-.avaliacao-card {
+.card-avaliacao {
   background: #fff;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 20px;
-  margin-bottom: 15px;
   box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-.avaliacao-card .texto {
-  font-size: 15px;
-  color: #374151;
+.topo-avaliacao {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 10px;
-  line-height: 1.5;
 }
 
-.avaliacao-card .nome {
+.cliente {
   font-weight: bold;
-  color: var(--dourado);
+  color: var(--azul);
+}
+
+.texto {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.5;
 }
 </style>
 </head>
@@ -236,7 +237,7 @@ input, select {
 
 <img src="logo.png" class="logo">
 
-<h1>INVISTA NAQUILO QUE SUSTENTA TODOS OS SEUS PLANOS: SUA SAÚDE!</h1> 
+<h1>Invista naquilo que sustenta seus planos: sua saúde!</h1> 
 <p class="sub">Daniele | Especialista em Planos de Saúde</p> 
 
 <form onsubmit="enviarWhats(event)">
@@ -264,7 +265,7 @@ input, select {
 </select>
 
 <select id="estado">
-<option value="">Consultar planos em outra região?</option>
+<option value="">Quer consultar planos em outra região?</option>
 <option>Acre</option>
 <option>Alagoas</option>
 <option>Amapá</option>
@@ -326,7 +327,7 @@ input, select {
 <p>💰 CONDIÇÕES COM O MELHOR CUSTO-BENEFÍCIO</p> 
 </div>
 
-<h3 style="text-align:center;">Por isso trabalho com operadoras consolidadas:</h3>
+<h3 style="text-align:center;"></h3>
 
 <div class="grid-operadoras">
 <img src="1.png"><img src="2.png"><img src="3.png"><img src="4.png">
