@@ -226,6 +226,40 @@ input, select {
   color: #374151;
   line-height: 1.5;
 }
+  .topo-formulario {
+  max-width: 780px;
+  margin: 0 auto 20px auto;
+  text-align: center;
+  padding: 10px 15px;
+}
+
+.topo-formulario h2 {
+  font-size: 32px;
+  line-height: 1.2;
+  font-weight: 800;
+  color: var(--azul);
+  margin: 0;
+  letter-spacing: -0.8px;
+}
+
+.topo-formulario h2 span {
+  color: var(--dourado);
+  position: relative;
+  display: inline-block;
+}
+
+.topo-formulario h2 span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: var(--dourado);
+  opacity: 0.6;
+  border-radius: 3px;
+}
+  
 </style>
 </head>
 
@@ -237,8 +271,14 @@ input, select {
 
 <img src="logo.png" class="logo">
 
-<h1>Invista naquilo que sustenta seus planos: sua saúde!</h1> 
-<p class="sub">Daniele | Especialista em Planos de Saúde</p> 
+<div class="topo-formulario">
+  <h2>
+    Invista hoje naquilo que sustenta todos os seus planos:<br>
+    <span>sua saúde!</span>
+  </h2>
+</div>
+
+<p class="sub">Daniele | Especialista em Planos de Saúde</p>
 
 <form onsubmit="enviarWhats(event)">
 <input type="text" id="nome" placeholder="Seu nome" required>
